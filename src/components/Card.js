@@ -5,12 +5,11 @@ import emoji from 'emoji-dictionary';
 import './Card.css';
 // WHY IS MY POST FROM POSTMAN NOT WORKING? SI SE PUEDE
 const Card = (props) => {
-    const text = props.text;
-    const id = props.id;
+    const { text, id } = props;
+    // let icon = icon !== null ? emoji.getUnicode(icon) : props.emoji;
     let icon = props.emoji
-    if (icon !== null) {
-      icon = emoji.getUnicode(icon)
-    }
+    if (icon !== null) {icon = emoji.getUnicode(icon)}
+
     // const emoji = emoji.getUnicode(props.emoji);
     return (
       <div className="card card__content">
@@ -18,7 +17,7 @@ const Card = (props) => {
         <p className="card__content-emoji">{icon}</p>
         <button
         className="card__delete"
-        onClick={() => {props.deleteCardCallback(props.id)}}
+        onClick={() => {props.deleteCardCallback(id)}}
         >Delete Note</button>
 
       </div>
