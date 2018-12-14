@@ -7,9 +7,9 @@ import './Card.css';
 const Card = (props) => {
     const text = props.text
     let icon = props.emoji
-    if (icon !== undefined) {
-      icon = emoji.getUnicode(icon)
-    }
+    // if (icon !== undefined) {
+    //   icon = emoji.getUnicode(icon)
+    // }
     // const emoji = emoji.getUnicode(props.emoji);
     return (
       <div className="card card__content">
@@ -22,7 +22,7 @@ const Card = (props) => {
 
 Card.propTypes = {
   text: PropTypes.string,
-  emoji: PropTypes.shape,
+  emoji: PropTypes.string,
 };
 
 export default Card;
