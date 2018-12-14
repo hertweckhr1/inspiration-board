@@ -1,5 +1,5 @@
 .card {
-  background-color: #F4FF81;
+  background-color: MediumSeaGreen;
 
   padding: 1em 0;
   margin: 0.5rem;
@@ -39,9 +39,11 @@
 .card__content-text, .card__content-emoji {
   padding: 0;
   margin: 0;
+  font-family: 'Permanent Marker', Helvetica, sans-serif;
 }
 
 .card__delete {
-  align-self: start;
+  /* align-self: start; */
   font-family: 'Permanent Marker', Helvetica, sans-serif;
+  text-align: center;
 }

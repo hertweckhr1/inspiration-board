@@ -24,6 +24,10 @@
   grid-row: auto;
 }
 
+.new-card-form__form-textarea {
+  width: 11rem;
+}
+
 .new-card-form__form-select,
 .new-card-form__form-textarea,
 .new-card-form__form-button {
@@ -31,10 +35,13 @@
   font-size: 1.25em;
   grid-column: controls;
   grid-row: auto;
+  margin-bottom: 1rem;
 }
 
 .new-card-form__form-button {
   background-color: inherit;
   border: 1px solid black;
   font-size: 1em;
+  font-family: 'Permanent Marker', Helvetica, sans-serif;
+
 }
