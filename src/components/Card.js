@@ -5,11 +5,12 @@ import emoji from 'emoji-dictionary';
 import './Card.css';
 
 const Card = (props) => {
-    const { text, emoji } = props;
+    const text = props.text;
+    // const emoji = emoji.getUnicode(props.emoji);
     return (
-      <div className="card">
-        <p>{text}</p>
-        <p>{emoji}</p>
+      <div className="card card__content">
+        <p className="card__content-text">{text}</p>
+        <p className="card__content-emoji">{props.emoji}</p>
       </div>
     )
   }
