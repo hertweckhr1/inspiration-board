@@ -6,7 +6,7 @@ import Card from './Card';
 import NewCardForm from './NewCardForm';
 // import CARD_DATA from '../data/card-data.json';
 
-const URL = 'https://inspiration-board.herokuapp.com/boards/Ada-Lovelace/cards';
+const URL = 'https://inspiration-board.herokuapp.com/boards/Hannah/cards';
 
 class Board extends Component {
   constructor() {
@@ -75,12 +75,38 @@ class Board extends Component {
       })
   }
 
+  deleteCard = (cardID) => {
+    console.log(cardID);
+    const deleteURL = `https://inspiration-board.herokuapp.com/cards/${cardID}`
+    axios.delete(deleteURL)
+      .then((response) => {
+        console.log('API delete success!')
+        console.log(response);
+        const {cards} = this.state;
+
+        const updatedCardList = cards.filter(item => item.card.id !== cardID );
+        console.log(response.data.card.id);
+        console.log(updatedCardList);
+        console.log(cardID);
+        this.setState({
+          cards: updatedCardList
+        });
+      })
+      .catch((error) => {
+        this.setState({
+          alertMessage: `Failure ${error.message}`,
+        })
+      })
+  }
+
   render() {
     // is there another way to write card.card by typing in before map first?
     const card = this.state.cards.map((card) => {
       return <Card key={card.card.id}
+              id={card.card.id}
               text={card.card.text}
-              emoji={card.card.emoji} />
+              emoji={card.card.emoji}
+              deleteCardCallback={this.deleteCard} />
     })
 
     return (
