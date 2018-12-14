@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import emoji from 'emoji-dictionary';
 
 import './Card.css';
-
+// WHY IS MY POST FROM POSTMAN NOT WORKING? SI SE PUEDE
 const Card = (props) => {
     const text = props.text
     let icon = props.emoji

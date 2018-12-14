@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-
 import './Board.css';
 import Card from './Card';
 import NewCardForm from './NewCardForm';
@@ -52,6 +51,10 @@ class Board extends Component {
     });
   }
 
+  addCard = (newCard) => {
+    
+  }
+
   render() {
     // is there another way to write card.card by typing in before map first?
     const card = this.state.cards.map((card) => {
@@ -62,6 +65,7 @@ class Board extends Component {
 
     return (
       <div className="board">
+        <section><NewCardForm addCardCallback={this.addCard}/></section>
         <p>{this.state.alertMessage}</p>
         {card}
       </div>
