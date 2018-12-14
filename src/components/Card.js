@@ -7,9 +7,9 @@ import './Card.css';
 const Card = (props) => {
     const text = props.text
     let icon = props.emoji
-    // if (icon !== undefined) {
-    //   icon = emoji.getUnicode(icon)
-    // }
+    if (icon !== null) {
+      icon = emoji.getUnicode(icon)
+    }
     // const emoji = emoji.getUnicode(props.emoji);
     return (
       <div className="card card__content">
