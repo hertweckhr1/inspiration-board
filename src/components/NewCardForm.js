@@ -68,3 +68,5 @@ class NewCardForm extends Component {
     );
   };
 }
+
+export default NewCardForm;

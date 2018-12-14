@@ -52,7 +52,7 @@ class Board extends Component {
   }
 
   addCard = (newCard) => {
-    
+
   }
 
   render() {
