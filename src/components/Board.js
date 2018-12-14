@@ -52,7 +52,27 @@ class Board extends Component {
   }
 
   addCard = (newCard) => {
+    // does the card.card need to somehow be put in here?
+    const apiPayLoad = {
+      ...newCard,
+    };
+    axios.post(URL, apiPayLoad)
+      .then((response) => {
+        console.log('API post success!');
+        console.log(response);
+        const {cards} = this.state;
 
+        cards.push(response.data);
+
+        this.setState({
+          cards,
+        })
+      })
+      .catch((error) => {
+        this.setState({
+          alertMessage: `Failure ${error.message}`,
+        })
+      })
   }
 
   render() {

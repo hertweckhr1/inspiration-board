@@ -15,10 +15,10 @@ const Card = (props) => {
       <div className="card card__content">
         <p className="card__content-text">{text}</p>
         <p className="card__content-emoji">{icon}</p>
+        <button className="card__delete">Delete Note</button>
       </div>
     )
   }
-
 
 Card.propTypes = {
   text: PropTypes.string,

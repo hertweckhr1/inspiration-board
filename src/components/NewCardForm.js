@@ -55,10 +55,6 @@ class NewCardForm extends Component {
           <input name="text" placeholder="text" onChange={this.onFormChange} value={this.state.text} />
         </div>
         <div>
-          <label className="new-card-form__form-label" htmlFor="Emoji">Emoji</label>
-          <input name="species" placeholder="species" onChange={this.onFormChange} value={this.state.emoji} />
-        </div>
-        <div>
           <select value={this.state.value} onChange={this.onFormChange}>
             {populateOptions}
           </select>
